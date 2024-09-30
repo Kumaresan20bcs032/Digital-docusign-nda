@@ -30,9 +30,12 @@ export const generateJWTAcessToken = async (req, res) => {
         const token = { accessToken: results.body.access_token };
         console.log("token:", token);
 
-        return sendSuccessResponse(res, 200, "Application token", token);
+        return { accessToken: results.body.access_token };
     }
     catch (error) {
         console.error("Token error:", error.message);
     }
 }
+
+
+export default dsApiClient;
