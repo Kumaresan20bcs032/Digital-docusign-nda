@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import router from "./routes/index_route";
 import { sendSuccessResponse } from "./utils/response_handler";
 
@@ -17,6 +18,10 @@ app.get("/", (req, res) => {
 
 // Extract and configure the port in env.
 const PORT = process.env.PORT || 3000;
+
+
+// console.log(path.join(process.cwd(),'src','Agreement_contents','three_party_nda_content.html'));
+
 
 app.listen(PORT, () => {
     console.log(`Server started at host:http://localhost:${PORT}`);
